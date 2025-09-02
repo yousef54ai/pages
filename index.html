@@ -3,38 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Yousef - Software Developer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
             color: #333;
-            margin-bottom: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
-        p {
+        .avatar { 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            background: #f0f0f0;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
             color: #666;
-            font-size: 1.1rem;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-align: center; }
+        .subtitle { 
+            font-size: 1.2rem; 
+            color: #666; 
+            text-align: center; 
+            margin-bottom: 1rem; 
+        }
+        .bio { 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            color: #777;
+        }
+        nav { 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #007AFF; 
+            margin: 0 1rem; 
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .avatar { width: 100px; height: 100px; font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <p>Welcome to my GitHub Pages site.</p>
-    </div>
+    <div class="avatar">👨‍💻</div>
+    <h1 id="name">Yousef</h1>
+    <div class="subtitle" id="title">Software Developer</div>
+    <div class="bio" id="bio">Building mobile and web applications</div>
+    
+    <nav>
+        <a href="apps.html">Apps</a>
+    </nav>
+
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('name').textContent = data.profile.name;
+                document.getElementById('title').textContent = data.profile.title;
+                document.getElementById('bio').textContent = data.profile.bio;
+            })
+            .catch(() => {
+                // Fallback if JSON fails - content already in HTML
+            });
+    </script>
 </body>
 </html>

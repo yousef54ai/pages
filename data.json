@@ -1,0 +1,17 @@
+{
+  "profile": {
+    "name": "Yousef",
+    "title": "Software Developer",
+    "bio": "Building mobile and web applications"
+  },
+  "apps": [
+    {
+      "id": "tasmeea",
+      "name": "Tasmeea",
+      "subtitle": "AI-Powered Quran Memorization",
+      "description": "Helps verify Quran memorization using real-time validation and progressive word revelation",
+      "platform": "React Native/Expo",
+      "status": "Released"
+    }
+  ]
+}
