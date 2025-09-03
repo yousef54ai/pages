@@ -18,13 +18,9 @@
             width: 120px; 
             height: 120px; 
             border-radius: 50%; 
-            background: #f0f0f0;
             margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #666;
+            object-fit: cover;
+            border: 3px solid #007AFF;
         }
         h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-align: center; }
         .subtitle { 
@@ -35,9 +31,18 @@
         }
         .bio { 
             text-align: center; 
-            margin-bottom: 3rem; 
+            margin-bottom: 2rem; 
             color: #777;
         }
+        .contact {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        .contact a:hover { text-decoration: underline; }
         nav { 
             text-align: center; 
             margin-bottom: 2rem; 
@@ -52,15 +57,19 @@
         @media (max-width: 600px) {
             body { padding: 1rem; }
             h1 { font-size: 2rem; }
-            .avatar { width: 100px; height: 100px; font-size: 2.5rem; }
+            .avatar { width: 100px; height: 100px; }
         }
     </style>
 </head>
 <body>
-    <div class="avatar">👨‍💻</div>
+    <img id="avatar" class="avatar" src="https://avatars.githubusercontent.com/u/175392064?v=4" alt="Yousef's Avatar">
     <h1 id="name">Yousef</h1>
     <div class="subtitle" id="title">Software Developer</div>
     <div class="bio" id="bio">Building mobile and web applications</div>
+    
+    <div class="contact">
+        <a href="mailto:yousef.contact.apps@gmail.com" id="email">yousef.contact.apps@gmail.com</a>
+    </div>
     
     <nav>
         <a href="apps.html">Apps</a>
@@ -73,6 +82,13 @@
                 document.getElementById('name').textContent = data.profile.name;
                 document.getElementById('title').textContent = data.profile.title;
                 document.getElementById('bio').textContent = data.profile.bio;
+                if (data.profile.avatar) {
+                    document.getElementById('avatar').src = data.profile.avatar;
+                }
+                if (data.profile.email) {
+                    document.getElementById('email').textContent = data.profile.email;
+                    document.getElementById('email').href = 'mailto:' + data.profile.email;
+                }
             })
             .catch(() => {
                 // Fallback if JSON fails - content already in HTML
