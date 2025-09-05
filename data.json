@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Yousef",
-    "bio": "Hi! I'm Yousef, crafting thoughtful, intelligent apps that genuinely help people.",
+    "bio": "AI Engineer - I enjoy crafting thoughtful, intelligent apps that genuinely help people.",
     "email": "yousef.contact.apps@gmail.com",
     "avatar": "https://avatars.githubusercontent.com/u/175392064?v=4"
   },
@@ -9,10 +9,11 @@
     {
       "name": "Tasmeea",
       "nameArabic": "تسميع",
-      "description": "AI-powered Quran memorization with instant mistake detection and word-by-word feedback",
+      "description": "Quran recitation verification using AI - Speech recognition with error detection algorithms, Arabic text processing and pattern matching, Real-time feedback system for learning",
       "descriptionArabic": "تطبيق لحفظ القرآن الكريم بالذكاء الاصطناعي مع اكتشاف فوري للأخطاء",
       "logo": "https://github.com/yousef54ai/tasmeea-logo.png",
-      "privacyUrl": "tasmeea-privacy.html"
+      "privacyUrl": "tasmeea-privacy.html",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.yousef54ai.tasmeea&hl=en-US"
     }
   ]
 }

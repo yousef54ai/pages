@@ -57,6 +57,39 @@
             margin-right: auto;
         }
         
+        .section-content {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .section-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        
+        .section-content ul {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-content li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .play-store-link {
+            display: inline-block;
+            color: #007AFF;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+        
+        .play-store-link:hover {
+            text-decoration: underline;
+        }
+        
         .email {
             display: inline-block;
             color: #007AFF;
@@ -174,12 +207,25 @@
             <a href="mailto:yousef.contact.apps@gmail.com" class="email" id="email">yousef.contact.apps@gmail.com</a>
         </div>
 
-        <!-- Apps Section -->
-        <div class="apps-section">
-            <h2 class="section-title">Apps</h2>
+        <!-- Content Sections -->
+        <div class="section-content">
+            <h2>What I Do</h2>
+            <ul>
+                <li>Study mathematics, algorithms, and machine learning</li>
+                <li>Build AI applications that solve real problems</li>
+            </ul>
+        </div>
+
+        <div class="section-content">
+            <h2>Projects</h2>
             <div id="apps-container">
                 <!-- Apps will be loaded here -->
             </div>
+        </div>
+
+        <div class="section-content">
+            <h2>Currently</h2>
+            <p style="color: #555;">Student at Saudi Electronic University.</p>
         </div>
     </div>
 
@@ -201,23 +247,17 @@
                 // Load apps
                 const container = document.getElementById('apps-container');
                 data.apps.forEach(app => {
-                    const appCard = document.createElement('div');
-                    appCard.className = 'app-card';
-                    appCard.innerHTML = `
-                        <div class="app-header">
-                            <div class="app-logo">📱</div>
-                            <div class="app-names">
-                                <div class="app-name">${app.name}</div>
-                                <div class="app-name-arabic">${app.nameArabic}</div>
-                            </div>
-                        </div>
-                        <div class="app-descriptions">
-                            <div class="app-desc">${app.description}</div>
-                            <div class="app-desc-arabic">${app.descriptionArabic}</div>
-                        </div>
-                        <a href="${app.privacyUrl}" class="privacy-link">Privacy Policy</a>
+                    const appDiv = document.createElement('div');
+                    appDiv.innerHTML = `
+                        <p><strong>${app.name}</strong> - Quran recitation verification using AI</p>
+                        <ul>
+                            <li>Speech recognition with error detection algorithms</li>
+                            <li>Arabic text processing and pattern matching</li>
+                            <li>Real-time feedback system for learning</li>
+                            <li>Try it out: <a href="${app.playStoreUrl || '#'}" class="play-store-link">Google Play</a></li>
+                        </ul>
                     `;
-                    container.appendChild(appCard);
+                    container.appendChild(appDiv);
                 });
             })
             .catch(() => {
