@@ -2,267 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yousef</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #000;
-            background-color: #f1f1f1;
-            padding: 2rem 1rem;
+        body {
+            font-family: monospace;
+            background: #ffffff;
+            color: #000000;
+            margin: 40px;
+            line-height: 1.4;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        a {
+            color: #0000ee;
         }
-        
-        .profile-section {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e0e0e0;
+        a:visited {
+            color: #551a8b;
         }
-        
-        .avatar { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 50%; 
-            object-fit: cover;
-            border: 3px solid #e0e0e0;
-            display: block;
-            margin: 0 auto 1.5rem;
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            overflow-x: auto;
         }
-        
-        .name {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #000;
-        }
-        
-        .bio {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #555;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .section-content {
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        
-        .section-content h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #000;
-        }
-        
-        .section-content ul {
-            margin-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-content li {
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-        
-        .play-store-link {
-            display: inline-block;
-            color: #007AFF;
-            text-decoration: none;
-            margin-left: 0.5rem;
-        }
-        
-        .play-store-link:hover {
-            text-decoration: underline;
-        }
-        
-        .email {
-            display: inline-block;
-            color: #007AFF;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid #007AFF;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }
-        
-        .email:hover {
-            background-color: #007AFF;
-            color: white;
-        }
-        
-        .apps-section {
-            margin-top: 2rem;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #000;
-        }
-        
-        .app-card {
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .app-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            gap: 1rem;
-        }
-        
-        .app-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        
-        .app-names {
-            flex: 1;
-        }
-        
-        .app-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 0.25rem;
-        }
-        
-        .app-name-arabic {
-            font-size: 1.2rem;
-            color: #666;
-            direction: rtl;
-        }
-        
-        .app-descriptions {
-            margin-bottom: 1.5rem;
-        }
-        
-        .app-desc {
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-        
-        .app-desc-arabic {
-            color: #666;
-            direction: rtl;
-            font-style: italic;
-        }
-        
-        .privacy-link {
-            color: #007AFF;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .privacy-link:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            body { padding: 1rem; }
-            .container { padding: 2rem 1rem; }
-            .name { font-size: 2rem; }
-            .avatar { width: 100px; height: 100px; }
-            .app-header { flex-direction: column; text-align: center; }
-            .app-names { text-align: center; }
+        hr {
+            border: none;
+            border-top: 1px solid #000000;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Profile Section -->
-        <div class="profile-section">
-            <img id="avatar" class="avatar" src="https://avatars.githubusercontent.com/u/175392064?v=4" alt="Yousef's Avatar">
-            <h1 class="name" id="name">Yousef</h1>
-            <div class="bio" id="bio">Hi! I'm Yousef, crafting thoughtful, intelligent apps that genuinely help people.</div>
-            <a href="mailto:yousef.contact.apps@gmail.com" class="email" id="email">yousef.contact.apps@gmail.com</a>
-        </div>
 
-        <!-- Content Sections -->
-        <div class="section-content">
-            <h2>What I Do</h2>
-            <ul>
-                <li>Study mathematics, algorithms, and machine learning</li>
-                <li>Build AI applications that solve real problems</li>
-            </ul>
-        </div>
+<h1>Hi, I'm Yousef</h1>
 
-        <div class="section-content">
-            <h2>Projects</h2>
-            <div id="apps-container">
-                <!-- Apps will be loaded here -->
-            </div>
-        </div>
+<p>AI Engineer</p>
 
-        <div class="section-content">
-            <h2>Currently</h2>
-            <p style="color: #555;">Student at Saudi Electronic University.</p>
-        </div>
-    </div>
+<p>I enjoy crafting thoughtful, intelligent apps that genuinely help people.</p>
 
-    <script>
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Update profile info
-                document.getElementById('name').textContent = data.profile.name;
-                document.getElementById('bio').textContent = data.profile.bio;
-                if (data.profile.avatar) {
-                    document.getElementById('avatar').src = data.profile.avatar;
-                }
-                if (data.profile.email) {
-                    document.getElementById('email').textContent = data.profile.email;
-                    document.getElementById('email').href = 'mailto:' + data.profile.email;
-                }
-                
-                // Load apps
-                const container = document.getElementById('apps-container');
-                data.apps.forEach(app => {
-                    const appDiv = document.createElement('div');
-                    appDiv.innerHTML = `
-                        <p><strong>${app.name}</strong> - Quran recitation verification using AI</p>
-                        <ul>
-                            <li>Speech recognition with error detection algorithms</li>
-                            <li>Arabic text processing and pattern matching</li>
-                            <li>Real-time feedback system for learning</li>
-                            <li>Try it out: <a href="${app.playStoreUrl || '#'}" class="play-store-link">Google Play</a></li>
-                        </ul>
-                    `;
-                    container.appendChild(appDiv);
-                });
-            })
-            .catch(() => {
-                // Fallback content already in HTML
-            });
-    </script>
+<hr>
+
+<h2>What I Do</h2>
+<pre>
+- Study mathematics, algorithms, and machine learning
+- Build AI applications that solve real problems
+</pre>
+
+<h2>Projects</h2>
+
+<p><strong>Tasmeea</strong> - Quran recitation verification using AI</p>
+<pre>
+- Speech recognition with error detection algorithms  
+- Arabic text processing and pattern matching
+- Real-time feedback system for learning
+- Try it out: <a href="https://play.google.com/store/apps/details?id=com.yousef54ai.tasmeea&hl=en-US">Google Play</a>
+</pre>
+
+<h2>Currently</h2>
+<p>Student at Saudi Electronic University.</p>
+
+<hr>
+
+<p>📧 Contact: <a href="mailto:yousef.contact.apps@gmail.com">yousef.contact.apps@gmail.com</a></p>
 </body>
 </html>
