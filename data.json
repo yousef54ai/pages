@@ -1,19 +1,18 @@
 {
   "profile": {
     "name": "Yousef",
-    "title": "Software Developer",
     "bio": "Hi! I'm Yousef, crafting thoughtful, intelligent apps that genuinely help people.",
     "email": "yousef.contact.apps@gmail.com",
     "avatar": "https://avatars.githubusercontent.com/u/175392064?v=4"
   },
   "apps": [
     {
-      "id": "tasmeea",
       "name": "Tasmeea",
-      "subtitle": "AI-Powered Quran Memorization",
-      "description": "Helps verify Quran memorization using real-time validation and progressive word revelation",
-      "platform": "React Native/Expo",
-      "status": "Released"
+      "nameArabic": "تسميع",
+      "description": "AI-powered Quran memorization with instant mistake detection and word-by-word feedback",
+      "descriptionArabic": "تطبيق لحفظ القرآن الكريم بالذكاء الاصطناعي مع اكتشاف فوري للأخطاء",
+      "logo": "https://github.com/yousef54ai/tasmeea-logo.png",
+      "privacyUrl": "tasmeea-privacy.html"
     }
   ]
 }

@@ -3,84 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef - Software Developer</title>
+    <title>Yousef</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            color: #000;
+            background-color: #f1f1f1;
             padding: 2rem 1rem;
         }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
         .avatar { 
             width: 120px; 
             height: 120px; 
             border-radius: 50%; 
-            margin: 0 auto 2rem;
             object-fit: cover;
-            border: 3px solid #007AFF;
+            border: 3px solid #e0e0e0;
+            display: block;
+            margin: 0 auto 1.5rem;
         }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-align: center; }
-        .subtitle { 
-            font-size: 1.2rem; 
-            color: #666; 
-            text-align: center; 
-            margin-bottom: 1rem; 
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000;
         }
-        .bio { 
-            text-align: center; 
-            margin-bottom: 2rem; 
-            color: #777;
+        
+        .bio {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .contact {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .contact a {
+        
+        .email {
+            display: inline-block;
             color: #007AFF;
             text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #007AFF;
+            border-radius: 6px;
+            transition: background-color 0.2s;
         }
-        .contact a:hover { text-decoration: underline; }
-        nav { 
-            text-align: center; 
-            margin-bottom: 2rem; 
+        
+        .email:hover {
+            background-color: #007AFF;
+            color: white;
         }
-        nav a { 
-            text-decoration: none; 
-            color: #007AFF; 
-            margin: 0 1rem; 
-            font-weight: 500;
+        
+        .apps-section {
+            margin-top: 2rem;
         }
-        nav a:hover { text-decoration: underline; }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #000;
+        }
+        
+        .app-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+        
+        .app-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .app-names {
+            flex: 1;
+        }
+        
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.25rem;
+        }
+        
+        .app-name-arabic {
+            font-size: 1.2rem;
+            color: #666;
+            direction: rtl;
+        }
+        
+        .app-descriptions {
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-desc {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .app-desc-arabic {
+            color: #666;
+            direction: rtl;
+            font-style: italic;
+        }
+        
+        .privacy-link {
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .privacy-link:hover {
+            text-decoration: underline;
+        }
+        
         @media (max-width: 600px) {
             body { padding: 1rem; }
-            h1 { font-size: 2rem; }
+            .container { padding: 2rem 1rem; }
+            .name { font-size: 2rem; }
             .avatar { width: 100px; height: 100px; }
+            .app-header { flex-direction: column; text-align: center; }
+            .app-names { text-align: center; }
         }
     </style>
 </head>
 <body>
-    <img id="avatar" class="avatar" src="https://avatars.githubusercontent.com/u/175392064?v=4" alt="Yousef's Avatar">
-    <h1 id="name">Yousef</h1>
-    <div class="subtitle" id="title">Software Developer</div>
-    <div class="bio" id="bio">Building mobile and web applications</div>
-    
-    <div class="contact">
-        <a href="mailto:yousef.contact.apps@gmail.com" id="email">yousef.contact.apps@gmail.com</a>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img id="avatar" class="avatar" src="https://avatars.githubusercontent.com/u/175392064?v=4" alt="Yousef's Avatar">
+            <h1 class="name" id="name">Yousef</h1>
+            <div class="bio" id="bio">Hi! I'm Yousef, crafting thoughtful, intelligent apps that genuinely help people.</div>
+            <a href="mailto:yousef.contact.apps@gmail.com" class="email" id="email">yousef.contact.apps@gmail.com</a>
+        </div>
+
+        <!-- Apps Section -->
+        <div class="apps-section">
+            <h2 class="section-title">Apps</h2>
+            <div id="apps-container">
+                <!-- Apps will be loaded here -->
+            </div>
+        </div>
     </div>
-    
-    <nav>
-        <a href="apps.html">Apps</a>
-    </nav>
 
     <script>
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
+                // Update profile info
                 document.getElementById('name').textContent = data.profile.name;
-                document.getElementById('title').textContent = data.profile.title;
                 document.getElementById('bio').textContent = data.profile.bio;
                 if (data.profile.avatar) {
                     document.getElementById('avatar').src = data.profile.avatar;
@@ -89,9 +197,31 @@
                     document.getElementById('email').textContent = data.profile.email;
                     document.getElementById('email').href = 'mailto:' + data.profile.email;
                 }
+                
+                // Load apps
+                const container = document.getElementById('apps-container');
+                data.apps.forEach(app => {
+                    const appCard = document.createElement('div');
+                    appCard.className = 'app-card';
+                    appCard.innerHTML = `
+                        <div class="app-header">
+                            <div class="app-logo">📱</div>
+                            <div class="app-names">
+                                <div class="app-name">${app.name}</div>
+                                <div class="app-name-arabic">${app.nameArabic}</div>
+                            </div>
+                        </div>
+                        <div class="app-descriptions">
+                            <div class="app-desc">${app.description}</div>
+                            <div class="app-desc-arabic">${app.descriptionArabic}</div>
+                        </div>
+                        <a href="${app.privacyUrl}" class="privacy-link">Privacy Policy</a>
+                    `;
+                    container.appendChild(appCard);
+                });
             })
             .catch(() => {
-                // Fallback if JSON fails - content already in HTML
+                // Fallback content already in HTML
             });
     </script>
 </body>
